@@ -72,7 +72,13 @@ $$
 
 What are the questions you want to answer?
 
-How can you use the **marginaleffects** package to answer them?
+How can you use the **marginaleffects** package to answer them? 
+Group = "no"
+Estimate = 0.9448
+
+Interpretation:
+This means that for a specific individual (i.e., a row in your dataset), your model estimates a 94.48% probability that they will not receive a callback (call = "no"), based on their characteristics (like name, gender, ethnicity, experience, etc.).
+I applied predictions(fit_call, type = "prob") on a model and got predicted probabilities for all 4,870 observations (twice — once for call = "no" and once for call = "yes"). So, 4,870 × 2 = 9,740 rows of predictions (one for each possible outcome). But my console is only showing a few rows (a sample), and then says "9730 rows omitted" to save space. So I'm only seeing the top few predictions for each group ("no" and "yes").
 
 ```{r}
 predictions(fit_call, type = "prob")
